@@ -8,7 +8,7 @@ class Calculadora {
     public:
 
     int propiedadPublica;
-    int sumar(int numero1, int numero2);
+    int Sumar(int numero1, int numero2);
     
 };
 
