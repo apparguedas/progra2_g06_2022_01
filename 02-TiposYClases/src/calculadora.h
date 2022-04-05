@@ -1,13 +1,12 @@
-#ifndef calculadora_h
-#define calculadora_h
+#ifndef CALCULADORA_H
+#define CALCULADORA_H
 
 class Calculadora {
 
-    int propiedadPrivada;
+    int ultimoResultado;
     
     public:
-
-    int propiedadPublica;
+    Calculadora(int ultimoResultadoInicial);
     int Sumar(int numero1, int numero2);
     
 };
