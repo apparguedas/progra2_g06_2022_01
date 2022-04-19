@@ -8,12 +8,14 @@ using namespace std;
 class EmpleadoPorHoras : public Empleado {
 
     float costoPorHoras;
+    int horasEnMes;
 
     public:
-    EmpleadoPorHoras(float costoPorHoras, string nombre);
+    EmpleadoPorHoras(float costoPorHoras, int horasEnMes, string nombre);
 
-    virtual float CalculoSalario(); 
-
+    virtual float CalculoPago(); 
+    virtual string ObtenerNombre();
+    int ObtenerHorasEnMes();
 };
 
 #endif

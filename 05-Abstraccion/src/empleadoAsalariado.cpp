@@ -8,7 +8,7 @@ EmpleadoAsalariado::EmpleadoAsalariado(float salarioMensual, string nombre)
     this->nombre = nombre;
 }
 
-float EmpleadoAsalariado::CalculoSalario()
+float EmpleadoAsalariado::CalculoPago()
 {
-    return 0;
+    return this->salarioMensual;
 }

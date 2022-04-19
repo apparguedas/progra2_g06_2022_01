@@ -12,7 +12,7 @@ class EmpleadoAsalariado : public Empleado {
     public:
     EmpleadoAsalariado(float salarioMensual, string nombre);
 
-    virtual float CalculoSalario(); 
+    virtual float CalculoPago(); 
 
 };
 

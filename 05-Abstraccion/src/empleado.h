@@ -11,9 +11,11 @@ class Empleado {
 
     protected:
     string nombre;
-    
+
     public:
-    virtual float CalculoSalario() = 0;
+    virtual float CalculoPago() = 0;
+
+    virtual string ObtenerNombre();
 };
 
 
