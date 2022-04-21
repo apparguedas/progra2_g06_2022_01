@@ -14,7 +14,7 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
+            "MIMode": "gdb", // lldb in Mac, gdb in Linux/WSL
             "preLaunchTask": "Compile the program"
         },
         {
@@ -27,7 +27,7 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
+            "MIMode": "gdb", // lldb in Mac, gdb in Linux/WSL
             "preLaunchTask": "Compile the tests"
         }
     ]
