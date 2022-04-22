@@ -26,10 +26,13 @@ namespace
         Calculadora calculadora;
 
         // Act - ejecute la operación
-        float actual = calculadora.Suma(3.5, 5.25);
-        float esperada = 8.75;
+        float numero1 = 3.14;
+        float numero2 = 5.25;
 
-        // Assert - valide los resultados
-        EXPECT_EQ(esperada, actual);
+        float actual = calculadora.Suma(numero1, numero2);
+        float esperada = 8.39;
+
+        // Assert - valide los resultados (especial para float)
+        EXPECT_FLOAT_EQ(esperada, actual);
     }
 }
