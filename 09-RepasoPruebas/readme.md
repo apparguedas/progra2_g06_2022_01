@@ -13,3 +13,4 @@ Se requiere una Calculadora que cumpla con los siguientes requerimientos:
     - Recibe un número:
         - si es mayor a 5, lo multiplica por 2
         - si es menor que 5, le suma 4.
+        - si es igual a 5, se multiplica por 5

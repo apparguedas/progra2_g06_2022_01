@@ -32,4 +32,19 @@ namespace
         // Assert - valide los resultados
         EXPECT_EQ(esperada, actual);
     }
+
+    TEST(Test_Calculadora_OperacionEspecial, Test_SiEsIgualA5)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Calculadora calculadora;
+
+        // Act - ejecute la operación
+        int actual = calculadora.OperacionEspecial(5);
+        int esperada = 25;
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+    }
 }
