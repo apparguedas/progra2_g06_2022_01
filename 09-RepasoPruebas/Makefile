@@ -9,7 +9,7 @@ test:
 	g++ $(FLAGS) tests/tests_calculadora_suma.cpp -o bin/tests_calculadora_suma.o
 	g++ $(FLAGS) tests/tests_calculadora_operacionespecial.cpp -o bin/tests_calculadora_operacionespecial.o
 	g++ $(FLAGS) src/calculadora.cpp -o bin/calculadora.o
-	g++ -g -o bin/tests -lgtest -lgtest_main -lpthread bin/tests_calculadora_suma.o bin/tests_calculadora_operacionespecial.o bin/calculadora.o
+	g++ -g -o bin/tests bin/tests_calculadora_suma.o bin/tests_calculadora_operacionespecial.o bin/calculadora.o -lgtest -lgtest_main -lpthread
 
 clean:
 	rm -Rf bin
