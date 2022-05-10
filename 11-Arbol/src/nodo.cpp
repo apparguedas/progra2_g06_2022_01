@@ -8,7 +8,10 @@ Nodo::Nodo(int id, int valor)
 
 Nodo::~Nodo() 
 {
-
+    for (Nodo *hijo : this->hijos)
+    {
+        delete hijo;
+    }
 }
 
 void Nodo::InsertarHijo(Nodo *hijo)
