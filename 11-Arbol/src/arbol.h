@@ -2,9 +2,14 @@
 #define ARBOL_H
 
 #include "nodo.h"
+#include <map>
+
+using namespace std;
 
 class Arbol {
     Nodo *raiz;
+
+    map<int, Nodo *> indiceNodos;
 
     public:
     Arbol(int idNodoRaiz, int valorNodoRaiz);
