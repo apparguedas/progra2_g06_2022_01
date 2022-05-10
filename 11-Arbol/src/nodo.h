@@ -20,6 +20,9 @@ class Nodo {
     
     int ObtenerID();
     int ObtenerValor();
+
+    void AsignePadre(Nodo *padre);
+    vector<Nodo *> ObtenerHijos();
 };
 
 #endif

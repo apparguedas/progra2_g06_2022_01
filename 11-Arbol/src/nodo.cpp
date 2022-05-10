@@ -13,7 +13,7 @@ Nodo::~Nodo()
 
 void Nodo::InsertarHijo(Nodo *hijo)
 {
-
+    this->hijos.push_back(hijo);
 }
 
 int Nodo::ObtenerID()
@@ -24,4 +24,14 @@ int Nodo::ObtenerID()
 int Nodo::ObtenerValor()
 {
     return this->valor;
+}
+
+void Nodo::AsignePadre(Nodo *padre)
+{
+    
+}
+
+vector<Nodo *> Nodo::ObtenerHijos()
+{
+    return this->hijos;
 }

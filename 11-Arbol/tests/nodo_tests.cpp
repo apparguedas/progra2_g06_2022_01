@@ -25,4 +25,24 @@ namespace
         EXPECT_EQ(valorEsperado, valorActual);
     }
 
+    TEST(Nodo_Test, Test_Agregar_Nodo_Hijo)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Nodo *nodoPadre = new Nodo(1, 2);     
+
+        // Act - ejecute la operación
+        Nodo *nodoHijoEsperado = new Nodo(2, 7);   
+        nodoPadre->InsertarHijo(nodoHijoEsperado);
+
+        // Assert - valide los resultados
+        vector<Nodo *> hijos = nodoPadre->ObtenerHijos();
+        Nodo *nodoHijoActual = hijos[0];
+
+        EXPECT_EQ(nodoHijoEsperado, nodoHijoActual);
+
+        delete nodoHijoEsperado;
+        delete nodoPadre;
+    }
 }
