@@ -13,9 +13,18 @@ Arbol::~Arbol()
     delete this->raiz;
 }
 
-void Arbol::InsertarValor(int idNodo, int nuevoValor, int idPadre)
+void Arbol::InsertarValor(int nuevoID, int nuevoValor, int idPadre)
 {
-    
+    Nodo *nuevoNodo = new Nodo(nuevoID, nuevoValor);
+
+    // Quién es el padre?
+    Nodo *nodoPadre = this->indiceNodos.at(idPadre);
+
+    nodoPadre->InsertarHijo(nuevoNodo);
+    nuevoNodo->AsignePadre(nodoPadre);
+
+    // Agregar nuevo nodo al índice
+    this->indiceNodos.insert( std::pair<int, Nodo *>(nuevoID, nuevoNodo) );
 }
 
 int Arbol::ObtenerValor(int idNodo)
