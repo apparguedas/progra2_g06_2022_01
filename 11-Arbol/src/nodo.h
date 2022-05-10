@@ -14,11 +14,12 @@ class Nodo {
 
     public:
     Nodo(int id, int valor);
-    ~Nodo() {}
+    ~Nodo();
 
     void InsertarHijo(Nodo *hijo);
-
-
+    
+    int ObtenerID();
+    int ObtenerValor();
 };
 
 #endif
