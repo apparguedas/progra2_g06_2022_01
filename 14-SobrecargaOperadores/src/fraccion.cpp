@@ -19,6 +19,31 @@ bool Fraccion::operator== (Fraccion &f) {
     return resultado;
 }
 
+bool Fraccion::operator != (Fraccion &f) {
+    bool resultado = this->ToFloat() != f.ToFloat();
+    return resultado;
+}
+
+bool Fraccion::operator >= (Fraccion &f) {
+    bool resultado = this->ToFloat() >= f.ToFloat();
+    return resultado;
+}
+
+bool Fraccion::operator > (Fraccion &f) {
+    bool resultado = this->ToFloat() > f.ToFloat();
+    return resultado;
+}
+
+bool Fraccion::operator < (Fraccion &f) {
+    bool resultado = this->ToFloat() < f.ToFloat();
+    return resultado;
+}
+
+bool Fraccion::operator <= (Fraccion &f) {
+    bool resultado = this->ToFloat() <= f.ToFloat();
+    return resultado;
+}
+
 ostream& operator << (ostream &o, const Fraccion *fraccion) {
 
     o << fraccion->numerador << "/" << fraccion->denominador;

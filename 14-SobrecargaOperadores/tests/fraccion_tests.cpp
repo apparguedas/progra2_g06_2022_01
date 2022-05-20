@@ -90,12 +90,147 @@ namespace
         // Arrange - configurar el escenario
         Fraccion fraccion1 {1, 2};
         Fraccion fraccion2 {2, 4};
+        Fraccion fraccion3 {1, 3};
 
         // Act - ejecute la operación
         bool actual = (fraccion1 == fraccion2);
         float esperada = true;
 
+        bool actual2 = (fraccion1 == fraccion3);
+        float esperada2 = false;
+
         // Assert - valide los resultados
         EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
     }
+
+    TEST(Fraccion_Test, Test_Fracciones_Diferente)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Fraccion fraccion1 {1, 2};
+        Fraccion fraccion2 {1, 3};
+        Fraccion fraccion3 {2, 6};
+
+        // Act - ejecute la operación
+        bool actual = (fraccion1 != fraccion2);
+        float esperada = true;
+
+        bool actual2 = (fraccion2 != fraccion3);
+        float esperada2 = false;
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
+    }
+
+    TEST(Fraccion_Test, Test_Fracciones_MayorIgual)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Fraccion fraccion1 {1, 2};
+        Fraccion fraccion2 {1, 3};
+        Fraccion fraccion3 {2, 6};
+
+
+        // Act - ejecute la operación
+        bool actual = (fraccion1 >= fraccion2);
+        float esperada = true;
+
+        bool actual2 = (fraccion2 >= fraccion3);
+        float esperada2 = true;
+
+        bool actual3 = (fraccion3 >= fraccion1);
+        float esperada3 = false;
+
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
+        EXPECT_EQ(esperada3, actual3);
+    }
+
+    TEST(Fraccion_Test, Test_Fracciones_Mayor)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Fraccion fraccion1 {1, 2};
+        Fraccion fraccion2 {1, 3};
+        Fraccion fraccion3 {2, 6};
+
+
+        // Act - ejecute la operación
+        bool actual = (fraccion1 > fraccion2);
+        float esperada = true;
+
+        bool actual2 = (fraccion2 > fraccion3);
+        float esperada2 = false;
+
+        bool actual3 = (fraccion3 >= fraccion1);
+        float esperada3 = false;
+
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
+        EXPECT_EQ(esperada3, actual3);
+    }
+    
+    TEST(Fraccion_Test, Test_Fracciones_Menor)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Fraccion fraccion1 {1, 2};
+        Fraccion fraccion2 {1, 3};
+        Fraccion fraccion3 {2, 6};
+
+
+        // Act - ejecute la operación
+        bool actual = (fraccion1 < fraccion2);
+        float esperada = false;
+
+        bool actual2 = (fraccion2 < fraccion3);
+        float esperada2 = false;
+
+        bool actual3 = (fraccion3 < fraccion1);
+        float esperada3 = true;
+
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
+        EXPECT_EQ(esperada3, actual3);
+    }
+    
+    TEST(Fraccion_Test, Test_Fracciones_MenorIgual)
+    {
+        /// AAA
+
+        // Arrange - configurar el escenario
+        Fraccion fraccion1 {1, 2};
+        Fraccion fraccion2 {1, 3};
+        Fraccion fraccion3 {2, 6};
+
+
+        // Act - ejecute la operación
+        bool actual = (fraccion1 <= fraccion2);
+        float esperada = false;
+
+        bool actual2 = (fraccion2 <= fraccion3);
+        float esperada2 = true;
+
+        bool actual3 = (fraccion3 <= fraccion1);
+        float esperada3 = true;
+
+
+        // Assert - valide los resultados
+        EXPECT_EQ(esperada, actual);
+        EXPECT_EQ(esperada2, actual2);
+        EXPECT_EQ(esperada3, actual3);
+    }
+    
 }
