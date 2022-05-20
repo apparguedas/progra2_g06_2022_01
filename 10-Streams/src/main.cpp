@@ -69,7 +69,7 @@ int main() {
             << endl;*/
     
     // Ejemplo 4: Ejemplo de inyección de dependencias para stream de entrada
-    /*
+    
 
     ifstream ifs("ejemplo.txt", std::ifstream::in); // Por default abriendo como texto
 
@@ -84,8 +84,8 @@ int main() {
     delete cuentaPalabras;
 
     ifs.close();
-    */
-
+    
+    /*
     // Ejemplo 5: Ejemplo escritura
     ofstream ofs("ejemploEscritura.txt", std::ifstream::out); // Por default abriendo como texto
 
@@ -98,7 +98,7 @@ int main() {
     ofs << "Número de palabras: " << 4 << endl;
     ofs << "Segunda línea: " << 4 << endl;
 
-    ofs.close();
+    ofs.close();*/
 
     return 0;
 }
