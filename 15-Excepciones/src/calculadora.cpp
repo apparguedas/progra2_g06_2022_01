@@ -2,7 +2,6 @@
 #include "excepcionDivideEntreCero.h"
 #include <exception>
 #include "excepcionNumeroNegativo.h"
-#include "excepcionDesconocida.h"
 
 int Calculadora::Sumar(int numero1, int numero2)
 {
