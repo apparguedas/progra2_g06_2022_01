@@ -8,10 +8,10 @@
             "name": "g++ - Debug program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/ejemplo10",
+            "program": "${workspaceFolder}/bin/catalogo",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb", // lldb in Mac, gdb in Linux/WSL
