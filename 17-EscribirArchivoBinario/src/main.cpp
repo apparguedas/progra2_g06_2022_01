@@ -9,6 +9,15 @@ using namespace std;
 
 int main() {
 
+    /*cout << "Tamaño en bytes de una variable int: " << sizeof(int) << endl;
+    cout << "Tamaño en bytes de una variable short: " << sizeof(short) << endl;
+    cout << "Tamaño en bytes de una variable long: " << sizeof(long) << endl;
+    cout << "Tamaño en bytes de una variable float: " << sizeof(float) << endl;
+    cout << "Tamaño en bytes de una variable double: " << sizeof(double) << endl;
+    cout << "Tamaño en bytes de una variable empleado: " << sizeof(Empleado) << endl; */   
+
+    
+    /* Ejemplo de guardar una planilla en un archivo binario
     Empleado *empleado1 = new Empleado(1, 20, "Maria");
     Empleado *empleado2 = new Empleado(2, 25, "Juan");
     Empleado *empleado3 = new Empleado(3, 22, "Pedro");
@@ -25,7 +34,7 @@ int main() {
 
     if (!archivoSalida.is_open())
     {
-        cerr << "No se pudo abrir archivo libros.dat para escribir los datos";
+        cerr << "No se pudo abrir archivo planilla.dat para escribir los datos";
         return -1;
     }
 
@@ -33,5 +42,25 @@ int main() {
 
     archivoSalida.close();
 
+    delete planilla;*/
+
+    // Ejemplo de leer una planilla desde un archivo binario
+    ifstream archivoEntrada;
+    archivoEntrada.open("planilla.dat", ios::in|ios::binary);
+
+    if (!archivoEntrada.is_open())
+    {
+        cerr << "No se pudo abrir archivo planilla.dat para leer los datos";
+        return -1;
+    }
+    
+    Planilla *planilla = new Planilla();
+
+    planilla->CargarDesdeStreamBinario(&archivoEntrada);
+
+    cout << planilla;
+
     delete planilla;
+
+    archivoEntrada.close();
 }

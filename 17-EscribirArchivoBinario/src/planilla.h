@@ -18,7 +18,10 @@ class Planilla {
     void AgregarEmpleado(Empleado *nuevoEmpleado);
 
     void GuardarEnStreamBinario(ostream *streamSalida);
+    void CargarDesdeStreamBinario(istream *streamEntrada);
+    void CargarEmpleadoPorPosicionDesdeStreamBinario(istream *streamEntrada, int posicionEmpleado);
 
+    friend ostream& operator << (ostream &o, const Planilla *planilla);
 };
 
 #endif

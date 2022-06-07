@@ -7,12 +7,16 @@ using namespace std;
 
 class Empleado {
 
-    int id;
-    int edad;
-    char nombre[12];
+    int id; // 4
+    int edad; // 4
+    char nombre[12]; // 12
+    
 
     public:
     Empleado(int id, int edad, string nombre);
+    Empleado();
+
+    friend ostream& operator << (ostream &o, const Empleado *empleado);
 };
 
 #endif
