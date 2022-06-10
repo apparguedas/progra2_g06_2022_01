@@ -1,4 +1,4 @@
-#include "../lib/calculadora.h"
+#include "../lib/include/calculadora.h"
 #include <iostream>
 
 int main() {
