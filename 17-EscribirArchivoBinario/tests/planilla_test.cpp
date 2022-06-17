@@ -28,7 +28,6 @@ namespace
         {
             cerr << "No se pudo abrir archivo archivo_test.dat para escribir los datos";
             FAIL();
-            return;
         }
 
         planillaEsperada->GuardarEnStreamBinario(&archivoSalida);
@@ -43,7 +42,6 @@ namespace
         {
             cerr << "No se pudo abrir archivo archivo_test.dat para leer los datos";
             FAIL();
-            //return;
         }
     
         Planilla *planillaLeida = new Planilla();
