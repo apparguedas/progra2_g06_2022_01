@@ -1,5 +1,6 @@
 FLAGS = -g -c --std=c++17
 
+
 all:
 	mkdir -p bin
 	g++ $(FLAGS) src/main.cpp -o bin/main.o
@@ -9,9 +10,11 @@ all:
 	
 test:
 	mkdir -p bin
-	g++ $(FLAGS) src/calculadora.cpp -o bin/calculadora.o
-	g++ $(FLAGS) tests/calculadora_tests.cpp -o bin/calculadora_tests.o
-	g++ -g -o bin/tests bin/calculadora.o bin/calculadora_tests.o -lgtest -lgtest_main -lpthread 
+	g++ $(FLAGS) src/empleado.cpp -o bin/empleado.o
+	g++ $(FLAGS) src/planilla.cpp -o bin/planilla.o
+	g++ $(FLAGS) tests/planilla_test.cpp -o bin/planilla_test.o
+	g++ -g -o bin/tests bin/empleado.o bin/planilla.o bin/planilla_test.o -lgtest -lgtest_main -lpthread 
 
 clean:
 	rm -Rf bin
+	rm *.dat
