@@ -1,5 +1,5 @@
 FLAGS = -g -arch arm64 --std=c++17
-CC = clang++
+CC = g++
 
 all:
 	mkdir -p obj
