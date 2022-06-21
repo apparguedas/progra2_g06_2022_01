@@ -1,4 +1,4 @@
-FLAGS = -g -arch arm64 --std=c++17
+FLAGS = -g --std=c++17
 CC = g++
 
 all:
