@@ -34,6 +34,14 @@ private slots:
 
     void on_btnLeerValor_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_btnGuardar_clicked();
+
 private:
     Ui::MainWindow *ui;
     Progra2::Calculadora *calculadora;

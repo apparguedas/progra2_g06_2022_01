@@ -2,6 +2,11 @@
 #include "ui_mainwindow.h"
 #include "./../calculadora_local/calculadora_local.h"
 #include <QMessageBox>
+#include "formempleado.h"
+#include <QFileDialog>
+#include "formproducto.h"
+#include <sstream>
+#include <fstream>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -179,21 +184,118 @@ void MainWindow::on_btnLeerValor_clicked()
     if (itemSeleccionado == nullptr)
     {
         // no hay ítem seleccionado
-        QMessageBox* msgbox = new QMessageBox(this);
+        QMessageBox *msgbox = new QMessageBox(this);
         msgbox->setWindowTitle("Título del diálogo");
         msgbox->setText("No hay ítem seleccionado");
         msgbox->open();
     }
     else
     {
-        QString texto = itemSeleccionado->data(1).toString();
+        QString stringID = itemSeleccionado->data(1).toString();
 
+        int idProducto = stringID.toInt();
+
+        std::ostringstream ssNombre {};
+        ssNombre << "Nombre " << idProducto;
+        std::string nombre = ssNombre.str();
+        int existencias = 100;
+
+        formProducto formProducto {this};
+        formProducto.CargarInformacion(idProducto, nombre, existencias);
+
+        int result = formProducto.exec();
+
+    }
+
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    FormEmpleado formEmpleado(this);
+    int result = formEmpleado.exec();
+    if (result == QDialog::Accepted) {
         QMessageBox* msgbox = new QMessageBox(this);
         msgbox->setWindowTitle("Título del diálogo");
-        msgbox->setText(texto);
+        msgbox->setText(formEmpleado.ObtenerNombre());
+        msgbox->open();
+    } else {
+        QMessageBox* msgbox = new QMessageBox(this);
+        msgbox->setWindowTitle("Título del diálogo");
+        msgbox->setText("Cancelado");
+        msgbox->open();
+    }
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,
+            "Abrir archivo de datos", "",
+            tr("Archivo de datos (*.dat);;All Files (*)"));
+
+
+    if (fileName != "")
+    {
+        // Convertir QString a std::string
+        std::string name = fileName.toStdString();
+
+        QMessageBox *msgbox = new QMessageBox(this);
+        msgbox->setWindowTitle("Título del diálogo");
+        msgbox->setText(fileName);
+        msgbox->open();
+    }
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    formProducto formProducto {this};
+    int result = formProducto.exec();
+
+    if (result == QDialog::Accepted) {
+
+        int id = formProducto.ObtenerID();
+        std::string nombre = formProducto.ObtenerNombre();
+        int existencias = formProducto.ObtenerExistencias();
+
+        // Acá llamamos a la biblioteca
+        /*try {
+            tienda->AgregarProducto(id, nombre, existencias);
+        }
+        catch (ExcepcionDatosInvalidosProducto &e) {
+            QMessageBox *msgbox = new QMessageBox(this);
+            msgbox->setWindowTitle("Título del diálogo");
+            msgbox->setText("Datos de producto inválido");
+            msgbox->open();
+        }*/
+
+        QMessageBox *msgbox = new QMessageBox(this);
+        msgbox->setWindowTitle("Título del diálogo");
+        msgbox->setText(QString::fromStdString(nombre));
         msgbox->open();
     }
 
+}
+
+
+void MainWindow::on_btnGuardar_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+            "Guardar archivo de datos", "",
+            tr("Archivo de datos (*.dat);;All Files (*)"));
+
+
+    if (fileName != "")
+    {
+        // Convertir QString a std::string
+        std::string name = fileName.toStdString();
+
+        QMessageBox *msgbox = new QMessageBox(this);
+        msgbox->setWindowTitle("Título del diálogo");
+        msgbox->setText(fileName);
+        msgbox->open();
+    }
 
 }
 

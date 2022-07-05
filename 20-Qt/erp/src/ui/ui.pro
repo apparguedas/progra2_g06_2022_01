@@ -9,13 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formempleado.cpp \
+    formproducto.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    formempleado.h \
+    formproducto.h \
     mainwindow.h
 
 FORMS += \
+    formempleado.ui \
+    formproducto.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
