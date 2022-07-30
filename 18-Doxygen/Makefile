@@ -1,12 +1,14 @@
-FLAGS = -g -c --std=c++17
+FLAGS = -g --std=c++17
+CC = g++
 
 all:
 	mkdir -p obj
 	mkdir -p bin
-	g++ $(FLAGS) src/calculadora.cpp -o obj/calculadora.o
-	g++ -shared -o bin/libcalculadora.so obj/calculadora.o
+	$(CC) $(FLAGS) -c src/calculadora.cpp -o obj/calculadora.o
+	$(CC) $(FLAGS) -shared -o bin/libcalculadora.so obj/calculadora.o
 	mkdir -p bin/include
 	cp src/calculadora.h ./bin/include
+	doxygen
 	
 test:
 	mkdir -p obj
